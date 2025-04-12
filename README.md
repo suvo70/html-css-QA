@@ -13,6 +13,11 @@ html & css interview question and answer with in depth code and structure
 - [What are the differences between adaptive design and responsive design](#What-are-the-differences-between-adaptive-design-and-responsive-design)
 - [How is border-box different from content-box](#How-is-border-box-different-from-content-box)
 - [What is z-index?](#What-is-z-index)
+- [CSS selectors](#CSS-selectors)
+- [What are the properties of flexbox](#What-are-the-properties-of-flexbox)
+
+
+**Reference** - https://www.interviewbit.com/css-interview-questions/
 
 
 
@@ -925,3 +930,133 @@ A new **stacking context** is created when:
 - An element has certain CSS properties like `opacity < 1`, `transform`, `filter`, `will-change`, etc.
 
 ---
+
+Great! Let’s break down each of these CSS selectors — they all involve relationships between `<div>` and `<p>` elements but behave **differently** depending on the **combinator** used.
+
+---
+
+## CSS selectors
+
+## 🧾 1. `div, p` (Group Selector)
+
+**Meaning**:  
+Selects **all `<div>` elements** and **all `<p>` elements** independently.
+
+**Example:**
+```css
+div, p {
+  color: blue;
+}
+```
+
+✅ Applies blue text color to **every `<div>` and `<p>`** in the document.
+
+---
+
+## 🧾 2. `div p` (Descendant Selector)
+
+**Meaning**:  
+Selects **all `<p>` elements inside** a `<div>` (no matter how deeply nested).
+
+**Example:**
+```css
+div p {
+  font-size: 18px;
+}
+```
+
+✅ Targets paragraphs **inside** any `<div>`, even if nested like `<div><span><p>...</p></span></div>`.
+
+---
+
+## 🧾 3. `div ~ p` (General Sibling Selector)
+
+**Meaning**:  
+Selects **every `<p>` element that is a sibling after a `<div>`**, at the same level (i.e., sharing the same parent).
+
+**Example:**
+```css
+div ~ p {
+  color: green;
+}
+```
+
+✅ Applies to all `<p>`s that come **after** a `<div>` under the **same parent**.
+
+---
+
+## 🧾 4. `div + p` (Adjacent Sibling Selector)
+
+**Meaning**:  
+Selects the **first `<p>` immediately after a `<div>`**, and only that one.
+
+**Example:**
+```css
+div + p {
+  color: red;
+}
+```
+
+✅ Only affects a `<p>` that is **right next to** a `<div>` — like `<div></div><p></p>`
+
+---
+
+## 🧾 5. `div > p` (Child Selector)
+
+**Meaning**:  
+Selects `<p>` elements that are **direct children** of a `<div>`.
+
+**Example:**
+```css
+div > p {
+  font-weight: bold;
+}
+```
+
+✅ Targets only `<p>`s that are **immediately inside** a `<div>`, not nested deeper.
+
+---
+
+### 🧠 Summary Table:
+
+| Selector    | Meaning                                      | Affects              |
+|-------------|----------------------------------------------|----------------------|
+| `div, p`    | All `<div>`s and `<p>`s                     | Both independently   |
+| `div p`     | `<p>`s inside `<div>` (any depth)           | Descendants          |
+| `div ~ p`   | All `<p>`s after `<div>` (same parent)      | General siblings     |
+| `div + p`   | First `<p>` right after a `<div>`           | Adjacent sibling     |
+| `div > p`   | `<p>`s directly inside `<div>`              | Direct children      |
+
+---
+
+## What are the properties of flexbox
+
+Flexbox stands for flexible box and it was introduced around 2017 in CSS with the purpose of providing an efficient way to handle layouts, align elements within them and distribute spaces amongst the items in dynamic/responsive conditions. It provides an enhanced ability to alter the dimensions of the items and make use of the available space in the container efficiently. In order to achieve this, CSS3 provides some properties.
+
+The properties of flexbox are as follows:
+
+**flex-direction**: This property helps in defining the direction the container should stack the items targetted for flex. The values of this property can be
+    row: Stacks items horizontally from left to right in the flex container.
+    column: Stacks items vertically from top to bottom in the flex container.
+    row-reverse: Stacks items horizontally from right to left in the flex container.
+    column-reverse: Stacks items vertically from bottom to top in the flex container.
+**flex-wrap**: This property specifies of the flex items should be wrapped or not. Possible values are:
+    wrap: The flex items would be wrapped if needed.
+    nowrap: This is the default value that says the items won’t be wrapped.
+    wrap-reverse: This specifies that the items will be wrapped if needed but in reverse order.
+    flex-flow: This property is used for setting both flex-direction and flex-wrap properties in one statement.
+**justify-content**: Used for aligning the flex items. Possible values are:
+    center: It means that all the flex items are present at the center of the container.
+    flex-start: This value states that the items are aligned at the start of the container. This is the default value.
+    flex-end: This value ensures the items are aligned at the end of the container.
+    space-around: This value displays the items having space between, before, around the items.
+    space-between: This value displays items with spaces between the lines.
+**align-items**: This is used for aligning flex items.
+**align-content**: This is used for aligning the flex lines.
+
+
+1. Difference between CSS grid vs flexbox?
+CSS Grid Layout is a two-dimensional system, meaning it can handle both columns and rows. Grid layout is intended for larger-scale layouts which aren’t linear in design.
+Flexbox is largely a one-dimensional system (either in a column or a row). Flexbox layout is most appropriate to the components of an application.
+
+
