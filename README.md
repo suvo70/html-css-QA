@@ -5,7 +5,7 @@ html & css interview question and answer with in depth code and structure
 
 ## CSS
 - [CSS box model](#CSS-box-model)
-- [What is Flexbox?](#What-is-Flexbox-?)
+- [What is Flexbox?](#What-is-Flexbox)
 
 
 
@@ -79,7 +79,7 @@ The **CSS box model** is a fundamental concept that describes how elements are s
 
 ---
 
-## 🔹 What is Flexbox?
+## 🔹 What is Flexbox
 
 **Flexbox** (Flexible Box Layout) is a CSS layout model designed to arrange items **along a single axis** (either row or column). It’s perfect for aligning, distributing space, and making layouts responsive **without float or positioning hacks**.
 
