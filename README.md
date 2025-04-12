@@ -6,7 +6,7 @@ html & css interview question and answer with in depth code and structure
 ## CSS
 - [CSS box model](#CSS-box-model)
 - [What is Flexbox](#What-is-Flexbox)
-- [What is a Media Query?](#What-is-a-Media-Query-?)
+- [What is a Media Query?](#What-is-a-Media-Query)
 
 
 
@@ -170,7 +170,7 @@ Absolutely! Let's dive into **media queries**, one of the most powerful features
 
 ---
 
-## What is a Media Query?
+## What is a Media Query
 
 A **media query** lets you apply CSS **only when certain conditions are true**, such as screen width, height, resolution, orientation, or device type.
 
