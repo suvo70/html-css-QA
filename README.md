@@ -7,6 +7,7 @@ html & css interview question and answer with in depth code and structure
 - [CSS box model](#CSS-box-model)
 - [What is Flexbox](#What-is-Flexbox)
 - [What is a Media Query?](#What-is-a-Media-Query)
+- [What is the Viewport?](#What-is-the-Viewport)
 
 
 
@@ -253,5 +254,77 @@ These are not strict rules, but popular sizes:
 /* Large devices (desktops) */
 @media (min-width: 1025px) { ... }
 ```
+
+Great question! The **viewport** is a super important concept in CSS, especially for responsive design.
+
+---
+
+## What is the Viewport
+
+The **viewport** is the **visible area of a web page** in the browser window. It's the part of the page that's currently viewable on screen **without scrolling**.
+
+Think of it as the browser's "window" through which you see your webpage content.
+
+---
+
+##  Why is it Important?
+
+The size of the viewport **varies across devices**:
+- Desktop monitor → Large viewport
+- Tablet → Medium viewport
+- Mobile phone → Small viewport
+
+Since screen sizes are different, you need CSS to **adapt** your content to fit the viewport correctly.
+
+---
+
+## 🧠 CSS Viewport Units
+
+CSS provides special units based on the viewport size:
+
+| Unit | Meaning                          |
+|------|----------------------------------|
+| `vw` | 1% of the **viewport width**     |
+| `vh` | 1% of the **viewport height**    |
+| `vmin` | 1% of the **smaller** of vw or vh |
+| `vmax` | 1% of the **larger** of vw or vh |
+
+---
+
+### ✅ Example:
+
+```css
+.hero {
+  width: 100vw;  /* Full width of the screen */
+  height: 100vh; /* Full height of the screen */
+  background-color: lightblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5vw; /* Font scales with screen width */
+}
+```
+
+```html
+<div class="hero">
+  Hello Viewport!
+</div>
+```
+
+---
+
+## 📱 Viewport Meta Tag (Very Important for Mobile)
+
+Add this to your `<head>` for proper scaling on mobile devices:
+
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+```
+
+Without it, your mobile site may look zoomed out or broken because the browser uses a "default" desktop-sized viewport.
+
+---
+
+Want an example where the layout adjusts based on viewport size using media queries and `vw`/`vh` units?
 
 ---
