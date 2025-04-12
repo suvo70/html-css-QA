@@ -6,6 +6,7 @@ html & css interview question and answer with in depth code and structure
 ## CSS
 - [CSS box model](#CSS-box-model)
 - [What is Flexbox](#What-is-Flexbox)
+- [What is a Media Query?](#What-is-a-Media-Query?)
 
 
 
@@ -165,4 +166,92 @@ These are laid out in either a row or column, and can be aligned, spaced, and wr
 
 ---
 
-Want a vertical layout or responsive wrap example too?
+Absolutely! Let's dive into **media queries**, one of the most powerful features in **CSS3** for building **responsive websites**.
+
+---
+
+## What is a Media Query?
+
+A **media query** lets you apply CSS **only when certain conditions are true**, such as screen width, height, resolution, orientation, or device type.
+
+They’re essential for **responsive design**, allowing your layout to adapt across desktops, tablets, and phones.
+
+---
+
+## 🔸 Basic Syntax
+
+```css
+@media media-type and (condition) {
+  /* CSS rules here */
+}
+```
+
+- `media-type`: usually `screen`, but can also be `print`, `all`, etc.
+- `condition`: like `(max-width: 768px)`, `(orientation: landscape)`
+
+---
+
+## 🧪 Example: Responsive Box
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Media Query Example</title>
+  <style>
+    .responsive-box {
+      width: 100%;
+      background-color: lightblue;
+      padding: 20px;
+      font-size: 24px;
+      text-align: center;
+    }
+
+    /* Media query for screens smaller than 600px */
+    @media screen and (max-width: 600px) {
+      .responsive-box {
+        background-color: lightcoral;
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="responsive-box">
+    Resize the browser to see the effect!
+  </div>
+</body>
+</html>
+```
+
+---
+
+### 🔍 What This Does:
+
+- On screens **wider than 600px**:  
+  - Blue background  
+  - Font size: 24px
+
+- On screens **600px or narrower**:  
+  - Coral background  
+  - Font size: 18px
+
+---
+
+## 📱 Common Media Query Breakpoints
+
+These are not strict rules, but popular sizes:
+
+```css
+/* Small devices (phones) */
+@media (max-width: 600px) { ... }
+
+/* Medium devices (tablets) */
+@media (min-width: 601px) and (max-width: 1024px) { ... }
+
+/* Large devices (desktops) */
+@media (min-width: 1025px) { ... }
+```
+
+---
